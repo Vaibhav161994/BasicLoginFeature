@@ -1,0 +1,25 @@
+.header{
+    background-color: #3676ff;
+    text-align: center;
+}
+#Error_msg{
+    color: darkred;
+    font-family: "Segoe Script";
+}
+#Logout_msg{
+    color: darkgreen;
+    font-family: "Segoe Script";
+}
+h1{
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.main_banner{
+    min-height: calc(100% - 51vh);
+}
+
+#login{
+    padding-top: 10%;
+}
