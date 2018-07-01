@@ -5,62 +5,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <title> Inventory Management Admin Home</title>
+    <link rel="stylesheet" th:href="@{/css/home.css}">
+    <title> Digital Cities Home</title>
 </head>
 <body>
-<div align="center">
-    <hr>
-    <h3> Inventory Management Admin Login </h3>
-    <hr>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Admin Panel</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" th:href="@{/admins}">All Users</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Dropdown
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="#">Disabled</a>
-                </li>
-            </ul>
+<header>
+    <div class="container-fluid main_banner">
+    <div class="row justify-content-between">
+        <div class="col-10">
+            <h2 class="p-2">Digital Cities</h2>
+        </div>
+        <div class="col-1 text-center mx-auto">
+            <h6>Welcome <span th:text="${#request.getUserPrincipal().getName().toUpperCase()}"></span></h6>
+        </div>
+        <div class="col-1">
             <form class="form-inline my-2 my-lg-0" th:action="@{/logout}" method="post">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Welcome Home &nbsp;<span th:text="${#request.userPrincipal.getName()}"></span></a>
-                    </li>
-                    <li class="nav-item">
-                            <button class="btn btn-secondary btn-signin text-center mx-auto" type="submit">Logout</button>
-                            <!- Manually Adding CSRF Token -->
-                            <!--<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">-->
-                    </li>
-                </ul>
+                <button class="btn btn-secondary btn-signin text-center" type="submit">Logout</button>
             </form>
         </div>
-    </nav>
+    </div>
+    </div>
+</header>
+<section id="navbar">
+    <!-- Side navigation -->
+    <div class="sidenav">
+        <a href="#">Operations Manager</a>
+        <a href="#">Ingestion Manager</a>
+        <a href="#">Feeds</a>
+        <a href="#">Categories</a>
+    </div>
+</section>
+<div class="main">
 
-    <br>
-    User Information: <br>
-    <span th:text="${#request.getUserPrincipal()}"></span>
+    Main Content
 
 </div>
+</div>
+
+<footer>
+    <div class="container-fluid fixed-bottom footer">
+    </div>
+</footer>
+
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

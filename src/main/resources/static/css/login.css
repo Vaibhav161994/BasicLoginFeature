@@ -2,13 +2,16 @@
     background-color: #3676ff;
     text-align: center;
 }
+
 #Error_msg{
-    color: darkred;
-    font-family: "Segoe Script";
+    color: #1c678b;
+    font-family: "Arial Black";
+    font-weight: bold;
 }
 #Logout_msg{
     color: darkgreen;
-    font-family: "Segoe Script";
+    font-family: "Arial Black";
+    font-weight: bold;
 }
 h1{
     color: #ffffff;

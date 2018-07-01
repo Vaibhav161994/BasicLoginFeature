@@ -3,24 +3,39 @@
     <title> Digital Cities - Login Page </title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" th:href="@{/css/login.css}">
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    <script type="text/javascript">
+             // setTimeout() function will be fired after page is loaded
+            // it will wait for 5 sec. and then will fire
+            // $("#successMessage").hide() function
+            $(function () {
+                setTimeout(function() {
+                    $('#error').slideUp("slow");
+                }, 5000);
+            });
+
+    </script>
 </head>
 <body>
 <header>
 <div class="container-fluid mx-auto header">
+    <div id="error" class="d-flex justify-content-end">
+        <p th:if="${param.error}" class="text-center">
+            <span id="Error_msg" class="alert alert-info text-center"> Sorry ! Username or Password is Wrong </span>
+        </p>
+        <p th:if="${param.logout}" class="text-center">
+            <span id="Logout_msg" class="alert alert-success text-center"> You have Successfuly Logged Out !</span>
+        </p>
+    </div>
 <h1 class="mx-auto main_banner">Digital Cities</h1>
 </div>
 </header>
 <section id="login_section">
     <div class="container">
-        <div id="error">
-        <p th:if="${param.error}" class="text-center">
-            <span id="Error_msg"> Sorry ! Username or Password is Wrong </span>
-        </p>
-        <p th:if="${param.logout}" class="text-center">
-            <span id="Logout_msg" class="text-center"> You have Successfuly Logged Out !</span>
-        </p>
-        </div>
-            <form class="form-signin mx-auto" th:action="@{/login}" method="post">
+        <form class="form-signin mx-auto" th:action="@{/login}" method="post">
                 <div class="form-group align-items-center text-center" id="login">
                     <div class="col-sm-4 mx-auto">
                         <span id="reauth-email" class="reauth-email"></span>
@@ -45,12 +60,10 @@
                     <br>
                     <a th:href="@{/signup}">Sign Up</a>
                 </div>
-
-            </form>
+        </form>
                 <!--<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">-->
     </div>
 </section>
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
