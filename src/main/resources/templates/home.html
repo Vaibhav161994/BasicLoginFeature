@@ -4,13 +4,16 @@
    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" th:href="@{/css/home.css}">
+    <script type="text/javascript" th:src="@{/js/home.js}"></script>
     <title> Digital Cities Home</title>
 </head>
 <body>
 <header>
-    <div class="container-fluid main_banner">
+    <div class="container-fluid main_banner fixed-top">
     <div class="row justify-content-between">
         <div class="col-10">
             <h2 class="p-2">Digital Cities</h2>
@@ -37,7 +40,76 @@
 </section>
 <div class="main">
 
-    Main Content
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Data Ingestion</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Data Search</a>
+        </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+            <!-- Stepper -->
+            <div class="steps-form-2">
+                <div class="steps-row-2 setup-panel-2 d-flex justify-content-between">
+                    <div class="steps-step-2">
+                        <a href="#step-1" type="button" class="btn btn-amber btn-circle-2 waves-effect ml-0" data-toggle="tooltip" data-placement="top" title="Basic Information"><i class="fas fa-info-circle" aria-hidden="true"></i></a>
+                    </div>
+                    <div class="steps-step-2">
+                        <a href="#step-2" type="button" class="btn btn-blue-grey btn-circle-2 waves-effect" data-toggle="tooltip" data-placement="top" title="Personal Data"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                    </div>
+                    <div class="steps-step-2">
+                        <a href="#step-3" type="button" class="btn btn-blue-grey btn-circle-2 waves-effect" data-toggle="tooltip" data-placement="top" title="Terms and Conditions"><i class="fa fa-photo" aria-hidden="true"></i></a>
+                    </div>
+                    <div class="steps-step-2">
+                        <a href="#step-4" type="button" class="btn btn-blue-grey btn-circle-2 waves-effect mr-0" data-toggle="tooltip" data-placement="top" title="Another Screen"><i class="fa fa-check" aria-hidden="true"></i></a>
+                    </div>
+                    <div class="steps-step-2">
+                        <a href="#step-5" type="button" class="btn btn-blue-grey btn-circle-2 waves-effect mr-0" data-toggle="tooltip" data-placement="top" title="Finish"><i class="fa fa-check" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- First Step -->
+            <form role="form" action="" method="post">
+                <div class="row setup-content-2" id="step-1">
+                    <div class="col-md-12">
+                        Step 1
+                    </div>
+                </div>
+
+                <!-- Second Step -->
+                <div class="row setup-content-2" id="step-2">
+                    <div class="col-md-12">
+                        Step 2
+                    </div>
+                </div>
+
+                <!-- Third Step -->
+                <div class="row setup-content-2" id="step-3">
+                    <div class="col-md-12">
+                        Step 3
+                    </div>
+                </div>
+
+                <!-- Fourth Step -->
+                <div class="row setup-content-2" id="step-4">
+                    <div class="col-md-12">
+                        Step 4
+                    </div>
+                </div>
+
+                <!-- Fifth Step -->
+                <div class="row setup-content-2" id="step-5">
+                    <div class="col-md-12">
+                        Step 5
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">Data Search Tab Contents</div>
+    </div>
 
 </div>
 </div>
